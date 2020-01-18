@@ -128,22 +128,26 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Column(children: getItems()),
+        body: getItems()
       ),
     );
   }
 
-  getItems() {
-    List<Widget> items = [];
-
-    for (int i = 0; i < 10; i++) {
-      //   items.add(Card(
-      //     child:Text('x $this.i')
-      //   )
-      //     );
-      // };
-      items.add(CustomCard(index: i, onPress: () => {}));
-    }
-    return items;
+  Widget getItems() {
+    List items = [];
+  var listItems = List.generate(10000, (counter) => "Item $counter");
+    // for (int i = 0; i < 10; i++) {
+    //   //   items.add(Card(
+    //   //     child:Text('x $this.i')
+    //   //   )
+    //   //     );
+    //   // };
+    //   items.add(CustomCard(index: i, onPress: () => {}));
+    // }
+    var listView = ListView.builder(itemBuilder:(context,index){
+      // return Text(listItems[index]);
+      return CustomCard(index: listItems[index], onPress: () => {});
+    } );
+    return listView;
   }
 }
