@@ -116,38 +116,20 @@
 
 import 'package:flutter/material.dart';
 import './src/app_screens/home..dart';
-import './src/components/CustomCard.dart';
+import './src/app_screens/secondRoute.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute:'/',
+      routes:{
+        '/':(context) => Home(),
+        '/second':(context) => SecondRoute(),
+      },
       title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: getItems()
-      ),
-    );
-  }
 
-  Widget getItems() {
-    List items = [];
-  var listItems = List.generate(10000, (counter) => "Item $counter");
-    // for (int i = 0; i < 10; i++) {
-    //   //   items.add(Card(
-    //   //     child:Text('x $this.i')
-    //   //   )
-    //   //     );
-    //   // };
-    //   items.add(CustomCard(index: i, onPress: () => {}));
-    // }
-    var listView = ListView.builder(itemBuilder:(context,index){
-      // return Text(listItems[index]);
-      return CustomCard(index: listItems[index], onPress: () => {});
-    } );
-    return listView;
+    );
   }
 }

@@ -22,7 +22,8 @@ class CustomCard extends StatelessWidget {
               )),
               Expanded(
                   child: FlatButton(
-                child: const Text('Press'),
+                child: Container(
+                    child: Text('Press', style: TextStyle(fontSize: 20))),
                 onPressed: this.onPress,
               )),
             ])
