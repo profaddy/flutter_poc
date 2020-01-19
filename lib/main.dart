@@ -117,7 +117,7 @@
 import 'package:flutter/material.dart';
 import './src/app_screens/home..dart';
 import './src/app_screens/secondRoute.dart';
-
+import './src/app_screens/login.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -125,7 +125,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute:'/',
       routes:{
-        '/':(context) => Home(),
+        '/':(context) => Login(),
+        '/home':(context) => Home(),
         '/second':(context) => SecondRoute(),
       },
       title: 'Welcome to Flutter',
