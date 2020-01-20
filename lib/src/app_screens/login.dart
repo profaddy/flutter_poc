@@ -17,12 +17,17 @@ class _LoginState extends State<Login> {
               title: Text('Login'),
             ),
             body: Container(
-                color: Colors.deepPurple,
+                decoration: BoxDecoration(
+                    // gradient: LinearGradient(
+                    //   begin: Alignment.topRight,
+                    //   end: Alignment.bottomLeft,
+                    //   colors: [Colors.blue, Colors.indigo])
+                    ),
                 child: Container(
                     margin: EdgeInsets.all(20.0),
                     child:
                         // margin: EdgeInsets.all(20.0),
-                        Column(children: <Widget>[
+                        ListView(children: <Widget>[
                       TextField(
                         decoration: InputDecoration(
                           labelText: 'Username',
@@ -37,18 +42,13 @@ class _LoginState extends State<Login> {
                       ),
                       Padding(padding: EdgeInsets.only(top: 10.0)),
                       TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(),
-                        ),
-                        onChanged: (String userInput) {
-                          setState(() {
-                            debugPrint("set state called");
-                            username = userInput;
-                          });
-                        },
-                      ),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            border: OutlineInputBorder(),
+                          ),
+                          onChanged: (String userInput) =>
+                              handleChanged(userInput)),
                       Padding(padding: EdgeInsets.only(top: 10.0)),
                       Text('$username'),
                       RaisedButton(
@@ -58,5 +58,12 @@ class _LoginState extends State<Login> {
                         child: Text('Login!'),
                       ),
                     ])))));
+  }
+
+  handleChanged(String userInput) {
+    setState(() {
+      debugPrint("set state called");
+      username = userInput;
+    });
   }
 }
