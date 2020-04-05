@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/src/components/TextFieldComponent.dart';
 import '../components/renderImage.dart';
 
-class Login extends StatefulWidget {
+class Signup extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _LoginState();
+    return _SignupState();
   }
 }
 
-enum FormType { login, register }
+enum FormType { login, signup }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   final formKey = new GlobalKey<FormState>();
-  FormType _formType = FormType.login;
+  FormType _formType = FormType.signup;
   String username = "";
   String password = "";
+
   //methods
 
   handleValidator(String value) {
@@ -26,16 +27,16 @@ class _LoginState extends State<Login> {
     final form = formKey.currentState;
     if (form.validate()) {
       form.save();
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/login');
       return true;
     } else {
       return false;
     }
   }
 
-  void moveToregister() {
+  void moveToLogin() {
     formKey.currentState.reset();
-    Navigator.pushNamed(context, '/signup');
+    Navigator.pushNamed(context, '/');
   }
 
   @override
@@ -43,7 +44,7 @@ class _LoginState extends State<Login> {
     return Center(
         child: Scaffold(
             appBar: AppBar(
-              title: Text('Login', style: TextStyle(color: Colors.white)),
+              title: Text('Signup', style: TextStyle(color: Colors.white)),
             ),
             body: Center(
                 child: Container(
@@ -99,12 +100,12 @@ class _LoginState extends State<Login> {
                 borderRadius: new BorderRadius.circular(18.0),
                 side: BorderSide(color: Colors.transparent)),
             onPressed: validateAndSave,
-            child: Text('Login', style: new TextStyle(fontSize: 20.0)),
+            child: Text('Signup', style: new TextStyle(fontSize: 20.0)),
             textColor: Colors.white,
           ),
           FlatButton(
-            onPressed: () => moveToregister(),
-            child: Text('Not have an account ? Create Account',
+            onPressed: () => moveToLogin(),
+            child: Text('Have an account ? Login',
                 style: new TextStyle(color: Colors.black, fontSize: 14.0)),
             textColor: Theme.of(context).accentColor,
           )

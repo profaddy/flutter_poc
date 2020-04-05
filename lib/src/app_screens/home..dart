@@ -5,12 +5,10 @@ import '../components/GridViewComponent.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return new Container(
         child: Scaffold(
-            appBar: AppBar(
-              title: Text('Home2r'),
-            ),
-            body: GridViewCompoment(_buildGridTileList(100))));
+            body: GridViewCompoment(_buildGridTileList(100)))
+            );
   }
 
 // //data source
@@ -38,6 +36,6 @@ class Home extends StatelessWidget {
               gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
-                  colors: [Colors.indigo[500], Colors.blue[500]])),
+                  colors: [Colors.teal[700], Colors.teal[100]])),
           child: Text('$i Item')));
 }

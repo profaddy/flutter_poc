@@ -118,6 +118,8 @@ import 'package:flutter/material.dart';
 import './src/app_screens/home..dart';
 import './src/app_screens/secondRoute.dart';
 import './src/app_screens/login.dart';
+import './src/app_screens/signup.dart';
+import './src/app_screens/homepage.dart';
 
 void main() => runApp(MyApp());
 
@@ -128,8 +130,9 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => Login(),
-          '/home': (context) => Home(),
+          '/home': (context) => HomePage(),
           '/second': (context) => SecondRoute(),
+          '/signup':(context) => Signup(),
         },
         title: 'My Blog',
         theme: new ThemeData(

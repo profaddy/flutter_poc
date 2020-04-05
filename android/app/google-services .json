@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "46038539630",
+    "firebase_url": "https://blog-app-c64a7.firebaseio.com",
+    "project_id": "blog-app-c64a7",
+    "storage_bucket": "blog-app-c64a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46038539630:android:a545296a918dfd561bf57f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46038539630-q8gbuq7p296o6egj609mvakqnve8qc5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0LA4aDGVBNkxCLuxa4NB38UkKJKIZKfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46038539630-q8gbuq7p296o6egj609mvakqnve8qc5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
