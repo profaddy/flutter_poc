@@ -122,6 +122,7 @@ import './src/app_screens/login.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
         initialRoute: '/',
@@ -130,12 +131,12 @@ class MyApp extends StatelessWidget {
           '/home': (context) => Home(),
           '/second': (context) => SecondRoute(),
         },
-        title: 'Welcome to Flutter',
-        theme: ThemeData(
-          brightness: Brightness.light,
-          accentColor: Colors.indigo,
-          primaryColor: Colors.indigo,
-          primarySwatch: Colors.indigo,
-        ));
+        title: 'My Blog',
+        theme: new ThemeData(
+            brightness: Brightness.light,
+            accentColor: Colors.teal[200],
+            primaryColor: Colors.teal[200],
+            // primarySwatch: Colors.teal[200],
+            buttonColor: Colors.teal[300]));
   }
 }
